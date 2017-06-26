@@ -75,7 +75,7 @@ export class HocComponent implements OnChanges {
   /**
    *
    *
-   * @param {*} changes 
+   * @param {*} changes
    * @memberof HocComponent
    */
   public ngOnChanges(changes: any) {
@@ -85,7 +85,7 @@ export class HocComponent implements OnChanges {
   /**
    *
    *
-   * @param {boolean} [isUpdate=false] 
+   * @param {boolean} [isUpdate=false]
    * @memberof HocComponent
    */
   public unwrapData(isUpdate: boolean = false) {
