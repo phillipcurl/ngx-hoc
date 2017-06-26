@@ -1,6 +1,6 @@
 {
   "name": "ngx-hoc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Higher-order components for Angular apps",
   "main": "./bundles/ngx-hoc.umd.js",
   "module": "./index.js",
