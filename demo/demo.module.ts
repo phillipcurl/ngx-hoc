@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { HocModule } from '../src';
 import { DemoComponent } from './demo.component';
+import { DemoService } from './demo.service';
 
 @NgModule({
   declarations: [
@@ -11,9 +12,10 @@ import { DemoComponent } from './demo.component';
   imports: [
     BrowserModule,
     HttpModule,
-    HocModule.configureHOC({
-      showLoading: true
-    })
+    HocModule
+  ],
+  providers: [
+    DemoService
   ],
   bootstrap: [
     DemoComponent
