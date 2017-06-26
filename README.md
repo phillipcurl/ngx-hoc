@@ -7,6 +7,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/phillipcurl/ngx-hoc.svg)](https://github.com/phillipcurl/ngx-hoc/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/phillipcurl/ngx-hoc/master/LICENSE)
 
+## This is a WIP. Use at your own risk.
+
 ## Demo
 https://phillipcurl.github.io/ngx-hoc/
 

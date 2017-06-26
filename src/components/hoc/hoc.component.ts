@@ -31,40 +31,40 @@ export class HocComponent implements OnChanges {
   @Input() public showLoading: boolean = this._config.showLoading;
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {EventEmitter<any>}
    * @memberof HocComponent
    */
   @Output() public dataLoaded: EventEmitter<any> = new EventEmitter();
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {EventEmitter<any>}
    * @memberof HocComponent
    */
   @Output() public dataUpdated: EventEmitter<any> = new EventEmitter();
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {EventEmitter<Error>}
    * @memberof HocComponent
    */
   @Output() public error: EventEmitter<Error> = new EventEmitter();
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {boolean}
    * @memberof HocComponent
    */
   public isLoading: boolean = true;
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {Subject<void>}
    * @memberof HocComponent
    */
@@ -73,8 +73,8 @@ export class HocComponent implements OnChanges {
   constructor(@Inject(HocConfigToken) public _config: HocConfig) {}
 
   /**
-   * 
-   * 
+   *
+   *
    * @param {*} changes 
    * @memberof HocComponent
    */
@@ -83,8 +83,8 @@ export class HocComponent implements OnChanges {
   }
 
   /**
-   * 
-   * 
+   *
+   *
    * @param {boolean} [isUpdate=false] 
    * @memberof HocComponent
    */
@@ -106,8 +106,8 @@ export class HocComponent implements OnChanges {
   }
 
   /**
-   * 
-   * 
+   *
+   *
    * @memberof HocComponent
    */
   public unsubscribe() {
@@ -115,8 +115,8 @@ export class HocComponent implements OnChanges {
   }
 
   /**
-   * 
-   * 
+   *
+   *
    * @private
    * @memberof HocComponent
    */
