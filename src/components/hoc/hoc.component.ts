@@ -44,6 +44,14 @@ export class HocComponent implements OnChanges {
    * @type {EventEmitter<any>}
    * @memberof HocComponent
    */
+  @Output() public dataIsUpdating: EventEmitter<any> = new EventEmitter();
+
+  /**
+   *
+   *
+   * @type {EventEmitter<any>}
+   * @memberof HocComponent
+   */
   @Output() public dataUpdated: EventEmitter<any> = new EventEmitter();
 
   /**
@@ -79,7 +87,9 @@ export class HocComponent implements OnChanges {
    * @memberof HocComponent
    */
   public ngOnChanges(changes: any) {
-    this.unwrapData();
+    this.dataIsUpdating.emit();
+    this.isLoading = true;
+    this.unwrapData(true);
   }
 
   /**
@@ -91,6 +101,7 @@ export class HocComponent implements OnChanges {
   public unwrapData(isUpdate: boolean = false) {
     this.data.takeUntil(this.ngUnsubscribe).subscribe(
       data => {
+        console.log(data);
         if (isUpdate) {
           this.dataUpdated.emit(data);
         } else {

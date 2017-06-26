@@ -1,4 +1,4 @@
-# ngx-hoc
+# ngx-hoc - [https://phillipcurl.github.io/ngx-hoc/]((https://phillipcurl.github.io/ngx-hoc/))
 [![Build Status](https://travis-ci.org/phillipcurl/ngx-hoc.svg?branch=master)](https://travis-ci.org/phillipcurl/ngx-hoc)
 [![codecov](https://codecov.io/gh/phillipcurl/ngx-hoc/branch/master/graph/badge.svg)](https://codecov.io/gh/phillipcurl/ngx-hoc)
 [![npm version](https://badge.fury.io/js/ngx-hoc.svg)](http://badge.fury.io/js/ngx-hoc)
@@ -8,6 +8,17 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/phillipcurl/ngx-hoc/master/LICENSE)
 
 ## This is a WIP. Use at your own risk.
+
+## Problem
+Angular apps that handle the fetching and displaying of data within multiple components can accumulate a sizeable portion of boilerplate code. Often you have to control the visiblity of a loading view, call a
+
+## Solution
+## Installation
+## Usage
+## Inspiration
+## Related
+## Thanks
+## License
 
 ## Demo
 https://phillipcurl.github.io/ngx-hoc/

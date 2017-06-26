@@ -10,8 +10,8 @@ export class DemoService {
   constructor(private _http: Http) { }
 
   callRedditApi() {
-    return this._http.get('https://www.reddit.com/r/programming.json')
-      .map((res: Response) => res.json().data.children);
+    return this._http.get('https://uinames.com/api/?amount=25')
+      .map((res: Response) => res.json());
   }
-  
+
 }
