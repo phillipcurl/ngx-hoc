@@ -1,4 +1,11 @@
-import { Component, OnChanges, Inject, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  Inject,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { Observable, Subject } from 'rxjs/Rx';
 import { HocConfig } from './../../models';
 import { HocConfigToken } from './../../tokens';
@@ -7,18 +14,17 @@ import { HocConfigToken } from './../../tokens';
   template: ``
 })
 export class HocComponent implements OnChanges {
-
   /**
-   * 
-   * 
+   *
+   *
    * @type {Observable<any>}
    * @memberof HocComponent
    */
   @Input() public data: Observable<any>;
 
   /**
-   * 
-   * 
+   *
+   *
    * @type {boolean}
    * @memberof HocComponent
    */
@@ -64,9 +70,7 @@ export class HocComponent implements OnChanges {
    */
   public ngUnsubscribe: Subject<void> = new Subject<void>();
 
-  constructor(
-    @Inject(HocConfigToken) public _config: HocConfig
-  ) { }
+  constructor(@Inject(HocConfigToken) public _config: HocConfig) {}
 
   /**
    * 
@@ -85,22 +89,20 @@ export class HocComponent implements OnChanges {
    * @memberof HocComponent
    */
   public unwrapData(isUpdate: boolean = false) {
-    this.data
-      .takeUntil(this.ngUnsubscribe)
-      .subscribe(
-        data => {
-          if (isUpdate) {
-            this.dataUpdated.emit(data);
-          } else {
-            this.dataLoaded.emit(data);
-          }
-          this.isLoading = false;
-        },
-        error => {
-          this.error.emit(new Error(error));
-          this.isLoading = false;
+    this.data.takeUntil(this.ngUnsubscribe).subscribe(
+      data => {
+        if (isUpdate) {
+          this.dataUpdated.emit(data);
+        } else {
+          this.dataLoaded.emit(data);
         }
-      );
+        this.isLoading = false;
+      },
+      error => {
+        this.error.emit(new Error(error));
+        this.isLoading = false;
+      }
+    );
   }
 
   /**
