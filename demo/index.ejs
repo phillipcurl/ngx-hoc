@@ -45,14 +45,20 @@
       }
     }
 
-    pre, code {
-      overflow-x: scroll;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     }
+
+    pre,
+    code {
+      overflow-x: auto;
+    }
+
   </style>
 </head>
 
-<body class="avenir">
-<!--<body class="avenir ba bw3 b--green">-->
+<body>
+  <!--<body class="avenir ba bw3 b--green">-->
 
   <a href="https://github.com/phillipcurl/ngx-hoc" class="github-corner hidden-xs" aria-label="View source on Github">
     <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
@@ -105,8 +111,8 @@
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
-          Import the HocModule into your AppModule. ngx-hoc ships with some default options, 
-          so we'll just use the standard import for now, but read on to see how to configure ngx-hoc globally.
+          Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
+          for now, but read on to see how to configure ngx-hoc globally.
         </p>
         <pre class="bg-light-gray pa3 bl bw3 b--green">
 <code>import { NgModule } from '@angular/core';
@@ -143,8 +149,8 @@ export class AppModule {}</code></pre>
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
-          Import the HocModule into your AppModule. ngx-hoc ships with some default options, 
-          so we'll just use the standard import for now, but read on to see how to configure ngx-hoc globally.
+          Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
+          for now, but read on to see how to configure ngx-hoc globally.
         </p>
         <pre class="bg-light-gray pa3 bl bw3 b--green">
 <code>import { Component, NgModule } from '@angular/core';
@@ -169,11 +175,10 @@ export class AppModule {}</code></pre>
       </header>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
-          Import the HocModule into your AppModule. ngx-hoc ships with some default options, 
-          so we'll just use the standard import for now, but read on to see how to configure ngx-hoc globally.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nostrum dignissimos debitis officia 
-          suscipit ipsam, eum consectetur sed sit nesciunt! Soluta repellat cupiditate placeat optio similique 
-          officiis, veritatis, ad perferendis.
+          Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
+          for now, but read on to see how to configure ngx-hoc globally. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Harum nostrum dignissimos debitis officia suscipit ipsam, eum consectetur sed sit nesciunt! Soluta repellat
+          cupiditate placeat optio similique officiis, veritatis, ad perferendis.
         </p>
         <dl class="lh-title mv2">
           <dt class="dib b">W:</dt>
@@ -230,11 +235,10 @@ const HOC_CONFIG: HocConfig = {
       </header>
       <div class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
-          Import the HocModule into your AppModule. ngx-hoc ships with some default options, 
-          so we'll just use the standard import for now, but read on to see how to configure ngx-hoc globally.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nostrum dignissimos debitis officia 
-          suscipit ipsam, eum consectetur sed sit nesciunt! Soluta repellat cupiditate placeat optio similique 
-          officiis, veritatis, ad perferendis.
+          Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
+          for now, but read on to see how to configure ngx-hoc globally. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Harum nostrum dignissimos debitis officia suscipit ipsam, eum consectetur sed sit nesciunt! Soluta repellat
+          cupiditate placeat optio similique officiis, veritatis, ad perferendis.
         </p>
       </div>
     </section>
@@ -264,11 +268,13 @@ const HOC_CONFIG: HocConfig = {
   </main>
 
   <footer class="pv4 ph3 ph5-m ph6-l mid-gray">
-    <small class="f6 db tc">© 2017 <b class="ttu">Phillip Curl</b></small>
+    <small class="f6 db tc">
+      © 2017 <b class="ttu"><a href="http://www.phillipcurl.com" class="link black" target="_blank">Phillip Curl</a></b>
+    </small>
     <div class="tc mt3">
       <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
-      <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
-      <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+      <a href="/terms/" title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+      <a href="/privacy/" title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
     </div>
   </footer>
 

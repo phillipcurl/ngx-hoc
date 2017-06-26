@@ -14,6 +14,7 @@ import { HocConfigToken } from './../../tokens';
   template: ``
 })
 export class HocComponent implements OnChanges {
+
   /**
    *
    *
@@ -101,7 +102,6 @@ export class HocComponent implements OnChanges {
   public unwrapData(isUpdate: boolean = false) {
     this.data.takeUntil(this.ngUnsubscribe).subscribe(
       data => {
-        console.log(data);
         if (isUpdate) {
           this.dataUpdated.emit(data);
         } else {

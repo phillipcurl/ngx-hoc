@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, Inject, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { HocConfig } from './../../models';
 import { HocConfigToken } from './../../tokens';
 import { HocComponent } from './../hoc/hoc.component';
@@ -13,8 +21,8 @@ import { HocComponent } from './../hoc/hoc.component';
     <ng-content *ngIf="!isLoading"></ng-content>
   `
 })
-export class HocObservableComponent extends HocComponent implements OnInit, OnDestroy {
-
+export class HocObservableComponent extends HocComponent
+  implements OnInit, OnDestroy {
   constructor(@Inject(HocConfigToken) public config: HocConfig) {
     super(config);
   }
@@ -26,5 +34,4 @@ export class HocObservableComponent extends HocComponent implements OnInit, OnDe
   ngOnDestroy() {
     this.unsubscribe();
   }
-
 }

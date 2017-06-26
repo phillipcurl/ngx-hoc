@@ -1,13 +1,15 @@
 import { HocComponent } from './hoc/hoc.component';
 import { HocObservableComponent } from './hoc-observable/hoc-observable.component';
-import { HocItemComponent } from './hoc-item/hoc-item.component';
+import { HocPromiseComponent } from './hoc-promise/hoc-promise.component';
 
 export const HOC_COMPONENTS: any = [
   HocComponent,
   HocObservableComponent,
-  HocItemComponent
+  HocPromiseComponent
 ];
 
 export { HocComponent } from './hoc/hoc.component';
-export { HocObservableComponent } from './hoc-observable/hoc-observable.component';
-export { HocItemComponent } from './hoc-item/hoc-item.component';
+export {
+  HocObservableComponent
+} from './hoc-observable/hoc-observable.component';
+export { HocPromiseComponent } from './hoc-promise/hoc-promise.component';

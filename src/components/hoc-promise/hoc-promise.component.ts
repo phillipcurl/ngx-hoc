@@ -1,11 +1,19 @@
-import { Component, OnInit, OnDestroy, Inject, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { HocConfig } from './../../models';
 import { HocConfigToken } from './../../tokens';
 import { HocComponent } from './../hoc/hoc.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'hoc-item',
+  selector: 'hoc-promise',
   template: `
     <div *ngIf="isLoading && showLoading">
       LOADING
@@ -13,8 +21,8 @@ import { HocComponent } from './../hoc/hoc.component';
     <ng-content *ngIf="!isLoading"></ng-content>
   `
 })
-export class HocItemComponent extends HocComponent implements OnInit, OnDestroy {
-
+export class HocPromiseComponent extends HocComponent
+  implements OnInit, OnDestroy {
   constructor(@Inject(HocConfigToken) public config: HocConfig) {
     super(config);
   }
@@ -26,5 +34,4 @@ export class HocItemComponent extends HocComponent implements OnInit, OnDestroy 
   ngOnDestroy() {
     this.unsubscribe();
   }
-
 }

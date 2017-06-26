@@ -8,12 +8,8 @@ import { DEFAULT_CONFIG } from './constants';
 import { HOC_COMPONENTS } from './components';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    ...HOC_COMPONENTS
-  ],
+  imports: [CommonModule],
+  declarations: [...HOC_COMPONENTS],
   providers: [
     ...HOC_SERVICES,
     {
@@ -21,9 +17,7 @@ import { HOC_COMPONENTS } from './components';
       useValue: DEFAULT_CONFIG
     }
   ],
-  exports: [
-    ...HOC_COMPONENTS
-  ]
+  exports: [...HOC_COMPONENTS]
 })
 export class HocModule {
   static configureHOC(config: HocConfig): ModuleWithProviders {
