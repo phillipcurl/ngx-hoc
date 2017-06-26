@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Component, OnInit, OnDestroy, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { HocConfig } from './../../models';
+import { HocConfigToken } from './../../tokens';
 import { HocComponent } from './../hoc/hoc.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'hoc-item',
   template: `
-    <div *ngIf="item | async; let item; else loading">
-    </div>
-    <ng-template #loading>
+    <div *ngIf="isLoading && showLoading">
       LOADING
-    </ng-template>
+    </div>
+    <ng-content *ngIf="!isLoading"></ng-content>
   `
 })
-export class HocItemComponent extends HocComponent implements OnInit {
+export class HocItemComponent extends HocComponent implements OnInit, OnDestroy {
 
-  constructor() {
-    super();
+  constructor(@Inject(HocConfigToken) public config: HocConfig) {
+    super(config);
   }
 
   ngOnInit() {
     this.unwrapData();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe();
   }
 
 }
