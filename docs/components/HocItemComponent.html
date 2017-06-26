@@ -324,6 +324,7 @@
     </p>
     <p class="comment">
                 <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -352,11 +353,10 @@
 
             <tr>
                 <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;item | async; let item; else loading&quot;&gt;
-&lt;/div&gt;
-&lt;ng-template #loading&gt;
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;isLoading &amp;&amp; showLoading&quot;&gt;
   LOADING
-&lt;/ng-template&gt;
+&lt;/div&gt;
+&lt;ng-content *ngIf&#x3D;&quot;!isLoading&quot;&gt;&lt;/ng-content&gt;
 </code></pre></td>
             </tr>
 
@@ -374,7 +374,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(config: any)</code>
                         </td>
                     </tr>
                             <tr>
@@ -388,33 +388,58 @@
     </section>
 
 
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> config</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>config:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, OnDestroy, Inject, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { HocConfig } from &#x27;./../../models&#x27;;
+import { HocConfigToken } from &#x27;./../../tokens&#x27;;
 import { HocComponent } from &#x27;./../hoc/hoc.component&#x27;;
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: &#x27;hoc-item&#x27;,
   template: &#x60;
-    &lt;div *ngIf&#x3D;&quot;item | async; let item; else loading&quot;&gt;
-    &lt;/div&gt;
-    &lt;ng-template #loading&gt;
+    &lt;div *ngIf&#x3D;&quot;isLoading &amp;&amp; showLoading&quot;&gt;
       LOADING
-    &lt;/ng-template&gt;
+    &lt;/div&gt;
+    &lt;ng-content *ngIf&#x3D;&quot;!isLoading&quot;&gt;&lt;/ng-content&gt;
   &#x60;
 })
-export class HocItemComponent extends HocComponent implements OnInit {
+export class HocItemComponent extends HocComponent implements OnInit, OnDestroy {
 
-  constructor() {
-    super();
+  constructor(@Inject(HocConfigToken) public config: HocConfig) {
+    super(config);
   }
 
   ngOnInit() {
     this.unwrapData();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe();
   }
 
 }
@@ -445,7 +470,7 @@ export class HocItemComponent extends HocComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="item | async; let item; else loading"></div><ng-template #loading>  LOADING</ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="isLoading && showLoading">  LOADING</div><ng-content *ngIf="!isLoading"></ng-content></div>'
     var COMPONENTS = [{'name': 'HocComponent', 'selector': ''},{'name': 'HocItemComponent', 'selector': 'hoc-item'},{'name': 'HocListComponent', 'selector': 'hoc-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HocItemComponent'};
