@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
   <title>ngx-hoc</title>
   <style>
     .github-corner {
@@ -90,10 +91,10 @@
   License-->
 
   <main class="ph2 ph3-m ph4-l">
-    <section class="cf mw6 mw7-ns center pv3 mb4">
+    <section class="cf mw5 mw6-ns center pv3 mb4">
       <header class="fl w-100">
         <h2 class="lh-title ttu f3 b mt0">
-          Installation & Setup
+          <span class="ba dib br-100 h2 w2 pa2 tc v-mid mr2">1</span> Installation & Setup
         </h2>
         <hr class="bb bw1 b--black-10">
       </header>
@@ -101,21 +102,21 @@
         <p class="f6 f4-ns lh-copy measure">
           Install ngx-hoc via Yarn.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green"><code>yarn add ngx-hoc</code></pre>
+        <pre class="shadow-5"><code class="bash">yarn add ngx-hoc</code></pre>
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
           If you don't use Yarn, install and save ngx-hoc to your package.json.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green"><code>npm i ngx-hoc --save</code></pre>
+        <pre class="shadow-5"><code class="bash">npm i ngx-hoc --save</code></pre>
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
           Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
           for now, but read on to see how to configure ngx-hoc globally.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green">
-<code>import { NgModule } from '@angular/core';
+        <pre class="shadow-5">
+<code class="typescript ts">import { NgModule } from '@angular/core';
 import { HocModule } from 'ngx-hoc';
 
 @NgModule({
@@ -128,10 +129,10 @@ import { HocModule } from 'ngx-hoc';
 export class AppModule {}</code></pre>
       </article>
     </section>
-    <section class="cf mw6 mw7-ns center pv3 mb4">
+    <section class="cf mw5 mw6-ns center pv3 mb4">
       <header class="fl w-100">
         <h2 class="lh-title ttu f3 b mt0">
-          Usage
+          <span class="ba dib br-100 h2 w2 pa2 tc v-mid mr2">2</span> Usage
         </h2>
         <hr class="bb bw1 b--black-10">
       </header>
@@ -139,21 +140,21 @@ export class AppModule {}</code></pre>
         <p class="f6 f4-ns lh-copy measure">
           Install ngx-hoc via Yarn.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green"><code>yarn add ngx-hoc</code></pre>
+        <pre class="shadow-5"><code class="bash">yarn add ngx-hoc</code></pre>
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
           If you don't use Yarn, install and save ngx-hoc to your package.json.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green"><code>npm i ngx-hoc --save</code></pre>
+        <pre class="shadow-5"><code class="bash">npm i ngx-hoc --save</code></pre>
       </article>
       <article class="cf fl w-100">
         <p class="f6 f4-ns lh-copy measure">
           Import the HocModule into your AppModule. ngx-hoc ships with some default options, so we'll just use the standard import
           for now, but read on to see how to configure ngx-hoc globally.
         </p>
-        <pre class="bg-light-gray pa3 bl bw3 b--green">
-<code>import { Component, NgModule } from '@angular/core';
+        <pre class="shadow-5">
+<code class="typescript ts">import { Component, NgModule } from '@angular/core';
 import { HocModule } from 'ngx-hoc';
 
 @NgModule({
@@ -166,7 +167,7 @@ import { HocModule } from 'ngx-hoc';
 export class AppModule {}</code></pre>
       </article>
     </section>
-    <section class="cf mw6 mw7-ns center pv3 mb4">
+    <section class="cf mw5 mw6-ns center pv3">
       <header class="fl w-100">
         <h2 class="lh-title ttu f3 b mt0">
           Configuration
@@ -180,6 +181,28 @@ export class AppModule {}</code></pre>
           elit. Harum nostrum dignissimos debitis officia suscipit ipsam, eum consectetur sed sit nesciunt! Soluta repellat
           cupiditate placeat optio similique officiis, veritatis, ad perferendis.
         </p>
+      </article>
+    </section>
+    <article class="cf mb4">
+      <div class="fl w-100 w-50-ns">
+        <pre class="shadow-5">
+<code class="typescript ts">import { HocModule, HocConfig } from 'ngx-warehouse';
+
+const HOC_CONFIG: HocConfig = {
+  showLoading: true //default is false
+};
+
+@NgModule({
+  ...
+  imports: [
+    ...
+    HocModule.configureHOC(HOC_CONFIG),
+    ...
+  ],
+  ...
+})</code></pre>
+      </div>
+      <div class="fl w-100 w-50-ns ph3 ph4-ns">
         <dl class="lh-title mv2">
           <dt class="dib b">W:</dt>
           <dd class="dib ml0 gray">Wins</dd>
@@ -208,25 +231,10 @@ export class AppModule {}</code></pre>
           <dt class="dib b">Div:</dt>
           <dd class="dib ml0 gray">Division Record</dd>
         </dl>
-        <pre class="bg-light-gray pa3 bl bw3 b--green">
-<code>import { HocModule, HocConfig } from 'ngx-warehouse';
+      </div>
+    </article>
 
-const HOC_CONFIG: HocConfig = {
-  showLoading: true //default is false
-};
-
-@NgModule({
-  ...
-  imports: [
-    ...
-    HocModule.configureHOC(HOC_CONFIG),
-    ...
-  ],
-  ...
-})</code></pre>
-      </article>
-    </section>
-    <section class="cf mw6 mw7-ns center pv3">
+    <section class="cf mw5 mw6-ns center pv3">
       <header class="fl w-100">
         <h2 class="lh-title ttu f3 b mt0">
           Example
@@ -244,8 +252,8 @@ const HOC_CONFIG: HocConfig = {
     </section>
     <article class="cf mb4">
       <div class="fl w-100 w-50-ns">
-        <pre class="bg-light-gray pa3 bl bw3 b--green">
-<code>import { HocModule, HocConfig } from 'ngx-warehouse';
+        <pre class="shadow-5">
+<code class="typescript ts">import { HocModule, HocConfig } from 'ngx-warehouse';
 
 const HOC_CONFIG: HocConfig = {
   showLoading: true //default is false
@@ -277,6 +285,13 @@ const HOC_CONFIG: HocConfig = {
       <a href="/privacy/" title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
     </div>
   </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+  </script>
 
 </body>
 

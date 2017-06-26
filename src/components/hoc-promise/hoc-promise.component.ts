@@ -23,6 +23,14 @@ import { HocComponent } from './../hoc/hoc.component';
 })
 export class HocPromiseComponent extends HocComponent
   implements OnInit, OnDestroy {
+  /**
+   *
+   *
+   * @type {Observable<any>}
+   * @memberof HocComponent
+   */
+  @Input() public dataSource: Promise<any>;
+
   constructor(@Inject(HocConfigToken) public config: HocConfig) {
     super(config);
   }
@@ -33,5 +41,9 @@ export class HocPromiseComponent extends HocComponent
 
   ngOnDestroy() {
     this.unsubscribe();
+  }
+
+  private _loadData() {
+    this.dataSource.then(data => {}).catch(error => {});
   }
 }
