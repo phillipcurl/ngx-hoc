@@ -20,7 +20,7 @@ https://phillipcurl.github.io/ngx-hoc/
 
 ## About
 
-<Higher-order components for Angular apps
+Higher-order components for Angular apps
 
 ## Installation
 
